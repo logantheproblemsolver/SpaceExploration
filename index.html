@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Project Title</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-      <img src="UserFlow.jpg"/>
-  </body>
+</head>
+
+<body>
+    <h1> Look, space at your fingertips. Isn't it cool? </h1>
+    <section class="searchSpace">
+        <h2>Want to see something specific about Space? Search here!</h2>
+        <form>
+            <fieldset>
+                <input type="text" class="input" id="searchInput">
+                <input type="submit" class="input" id="searchSubmit">
+            </fieldset>
+        </form>
+        <div class="searchResults NASA" id="searchNASA">
+
+        </div>
+        <div class="saerchResults youtube" id="searchYoutube">
+
+        </div>
+    </section>
+
+    <section class="dateSpace">
+        <h2> Want to view NASA's photo of the day? Enter the date here!</h2>
+        <form>
+            <fieldset>
+                <input type="date" class="input" id="dateInput" value="YYYY-MM-DD" min="1995-06-20">
+                <input type="submit" class="input" id="dateSubmit">
+            </fieldset>
+        </form>
+        <div class="dateResults NASA" id="dateNASA">
+
+        </div>
+        <div class="dateResults youtube" id="dateYoutube">
+
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
 </html>
