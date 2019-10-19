@@ -1,4 +1,22 @@
-img {
-    height: 400px; 
-    width: 400px;
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    text-align: center;
+}
+
+section {
+    display: inline-block;
+}
+
+
+fieldset {
+    border: none;
+}
+
+
+.searchSpace {
+    padding-right: 30px;
 }
