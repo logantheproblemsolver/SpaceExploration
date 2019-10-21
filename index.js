@@ -14,6 +14,8 @@ function searchSubmit() {
         console.log(search)
         getSpaceSearchNASAApi(search);
         getSpaceSearchYoutubeApi(search);
+        $('#NASAResults').empty();
+        $('#youtubeSearchVideos').empty();
  
     })
 }
@@ -71,7 +73,6 @@ function getSpaceSearchYoutubeApi(search) {
 
 
 function displaySpaceSearchResult(responseSpaceSearchJson) {
-
     for (i=0; i < 10; i++) {
         let picture = responseSpaceSearchJson.collection.items[i].links[0].href
          $('#NASAResults').append(`
@@ -104,6 +105,7 @@ function dateSubmit() {
         console.log(date)
         getSpaceDate(date);
         $('.dateResults').empty();
+        $('.searchResults').empty();
     })
 }
 
