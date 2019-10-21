@@ -43,7 +43,7 @@ function getSpaceSearchNASAApi(search) {
             throw new Error(response.statusText);
         })
         .then(responseSpaceSearchJson => displaySpaceSearchResult(responseSpaceSearchJson))
-        .catch(err => console.log(err.message))
+        .catch(err => $('.badResult').append(`Something went wrong: ${err.message}`))
 }
 
 
@@ -65,14 +65,14 @@ function getSpaceSearchYoutubeApi(search) {
             throw new Error(response.statusText);
         })
         .then(responseYoutubeJson => displayYoutubeSearchResults(responseYoutubeJson))
-        .catch(err => console.log(err.message));
+        .catch(err => $('.badResult').append(`Something went wrong: ${err.message}`));
       
 }
 
 
 function displaySpaceSearchResult(responseSpaceSearchJson) {
 
-    for (i=0; i < responseSpaceSearchJson.collection.items.length; i++) {
+    for (i=0; i < 10; i++) {
         let picture = responseSpaceSearchJson.collection.items[i].links[0].href
          $('#NASAResults').append(`
          <li><img src="${picture}"></li>
@@ -82,14 +82,13 @@ function displaySpaceSearchResult(responseSpaceSearchJson) {
 
 
 function displayYoutubeSearchResults(responseYoutubeJson) {
-    console.log(responseYoutubeJson)
     for (let i=0; i < responseYoutubeJson.items.length; i++) {
-        console.log(`${responseYoutubeJson.items[i].snippet.title}`)
-        console.log(`responseYoutubeJson.items[i].snippet.thumbnails.default.url`)
+        let youtubeSearch = responseYoutubeJson.items[i].id.videoId;
+        console.log(youtubeSearch)
         $('#youtubeSearchVideos').append( 
             `<li>
                 <p class="title">${responseYoutubeJson.items[i].snippet.title}</p>
-                <img src='${responseYoutubeJson.items[i].snippet.thumbnails.default.url}'>
+                <iframe src="https://www.youtube.com/embed/${youtubeSearch}"/>
             </li>`
         )
     }
@@ -138,7 +137,7 @@ function getSpaceDate(date) {
         getYoutubeDateResults(responseNASADateJson)
     }
         )
-    .catch(err => console.log(err.message));
+    .catch(err => $('.badResult').append(`Something went wrong: ${err.message}`));
 
     
 }
@@ -154,9 +153,9 @@ function getYoutubeDateResults(responseNASADateJson) {
 
 
     const queryString = formatDateQueryParams(parameters)
-    const url = youtubeSearchURL + '?' + queryString;
+    const youtubeURL = youtubeSearchURL + '?' + queryString;
 
-    fetch(url)
+    fetch(youtubeURL)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -164,7 +163,7 @@ function getYoutubeDateResults(responseNASADateJson) {
             throw new Error(response.StatusText)
         })
         .then(responseYoutubeDateResults => displayYoutubeDateResults(responseYoutubeDateResults))
-        .catch(err => console.log(err.message))
+        .catch(err => $('.badResult').append(`Something went wrong: ${err.message}`))
 }
 
 function displayDateResults(responseNASADateJson) {
@@ -175,9 +174,10 @@ function displayDateResults(responseNASADateJson) {
 
 function displayYoutubeDateResults(responseYoutubeDateResults) {
     for (let i=0; i < responseYoutubeDateResults.items.length; i++) {
-        console.log(responseYoutubeDateResults.items[i].snippet.thumbnails.medium.url)
-        $('#dateYoutube').append( 
-            `<img src="responseYoutubeDateResults.items[i].snippet.thumbnails.medium.url"/>`
+        let youtubeDate = responseYoutubeDateResults.items[i].id.videoId
+        console.log(responseYoutubeDateResults.items[i].snippet.thumbnails.default.url)
+        $('#dateYoutube').html( 
+            `<iframe src="https://www.youtube.com/embed/${youtubeDate}"/>`
         )
     }
 }

@@ -5,6 +5,7 @@
 
 body {
     text-align: center;
+    align-content: center;
 }
 
 section {
@@ -22,6 +23,7 @@ fieldset {
 }
 
 
-#dateYoutube {
-    border: 1px solid black;
+ul {
+    list-style: none;
+    display: inline-block;
 }
