@@ -199,3 +199,11 @@ $(function() {
     searchSubmit();
     dateSubmit();
 })
+
+
+$(function() {
+    $('.crawl').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function() {
+        alert('transition finished');
+        $('.starWarsText').addCSS('display', 'none');
+    })
+})
