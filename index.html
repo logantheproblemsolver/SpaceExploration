@@ -8,21 +8,21 @@
     <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body class="indexPage">
     <h1> Look, space at your fingertips. Isn't it cool? </h1>
     <h2> You can pick to search a topic or you can pick a photo of the day! </h2>
     <section class="navBar">
         <form class="spaceSearch">
             <fieldset>
                 <input type="text" class="input" id="searchInput" placeholder="Let's do a Space Search!">
-                <input type="submit" class="input" id="searchSubmit">
+                <input type="submit" class="submitInput" id="searchSubmit">
             </fieldset>
         </form>
         <p class="navText"> OR </p>
         <form class="spaceDate">
             <fieldset>
-                <input type="date" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
-                <input type="submit" class="input" id="dateSubmit">
+                <input type="date" name="APOD" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
+                <input type="submit" class="submitInput" id="dateSubmit">
             </fieldset>
         </form>
     </section>

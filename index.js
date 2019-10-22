@@ -77,7 +77,7 @@ function displaySpaceSearchResult(responseSpaceSearchJson) {
     for (i=0; i < 10; i++) {
         let picture = responseSpaceSearchJson.collection.items[i].links[0].href
          $('#NASAResults').append(`
-         <li><img src="${picture}"></li>
+         <li><img src="${picture}" alt="space picture results" class="spaceImages"></li>
          `) 
     }
 }
@@ -170,17 +170,23 @@ function getYoutubeDateResults(responseNASADateJson) {
 }
 
 function displayDateResults(responseNASADateJson) {
+    console.log(responseNASADateJson.explanation)
     let pictureDate = responseNASADateJson.url
     $('.dateResults').removeClass('hidden');
-    $('#dateNASA').append(`<img src='${pictureDate}' alt="Image from date entered" class="dateImage">`)
+    $('#dateNASA').append(`
+    <img src='${pictureDate}' alt="Image from date entered" class="dateImage">
+    <p class="dateDescription">${responseNASADateJson.explanation}</p>
+    `)
 }
 
 
 function displayYoutubeDateResults(responseYoutubeDateResults) {
     for (let i=0; i < responseYoutubeDateResults.items.length; i++) {
         let youtubeDate = responseYoutubeDateResults.items[i].id.videoId
-        $('#dateYoutube').html( 
-            `<li><iframe src="https://www.youtube.com/embed/${youtubeDate}"/></li>`
+        $('#dateYoutube').append( 
+            `<li>
+            <iframe src="https://www.youtube.com/embed/${youtubeDate}"/>
+            </li>`
         )
     }
 }
