@@ -10,20 +10,29 @@
 
 <body>
     <h1> Look, space at your fingertips. Isn't it cool? </h1>
-    <section class="searchSpace">
-        <h2>Want to see something specific about Space? Search here!</h2>
-        <form>
+    <h2> You can pick to search a topic or you can pick a photo of the day! </h2>
+    <section class="navBar">
+        <form class="spaceSearch">
             <fieldset>
-                <input type="text" class="input" id="searchInput">
+                <input type="text" class="input" id="searchInput" placeholder="Let's do a Space Search!">
                 <input type="submit" class="input" id="searchSubmit">
             </fieldset>
         </form>
-        <div class="searchResults NASA" id="searchNASA">
+        <p class="navText"> OR </p>
+        <form class="spaceDate">
+            <fieldset>
+                <input type="date" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
+                <input type="submit" class="input" id="dateSubmit">
+            </fieldset>
+        </form>
+    </section>
+    <section class="searchSpace">
+        <div class="searchResults hidden" id="searchNASA">
             <ul class="NASASearchResults" id="NASAResults"> 
                 
             </ul>
         </div>
-        <div class="searchResults youtube" id="searchYoutube">
+        <div class="searchResults hidden" id="searchYoutube">
             <ul class="youtubeVideos" id="youtubeSearchVideos">
 
             </ul>
@@ -31,18 +40,13 @@
     </section>
 
     <section class="dateSpace">
-        <h2> Want to view NASA's photo of the day? Enter the date here!</h2>
-        <form>
-            <fieldset>
-                <input type="date" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
-                <input type="submit" class="input" id="dateSubmit">
-            </fieldset>
-        </form>
-        <div class="dateResults NASA" id="dateNASA">
+        <div class="dateResults hidden" id="dateNASA">
 
         </div>
-        <div class="dateResults youtube" id="dateYoutube">
+        <div class="dateResults hidden" id="dateYoutube">
+            <ul class="youtubeVideos" id="youtubeDateVideos">
 
+            </ul>
         </div>
     </section>
     <section class="badResult">

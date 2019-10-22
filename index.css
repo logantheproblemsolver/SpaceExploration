@@ -1,11 +1,13 @@
 * {
     box-sizing: border-box;
+    background-image: url("SpaceBackground-2.jpeg");
 }
 
 
 body {
     text-align: center;
     align-content: center;
+    color: white;
 }
 
 section {
@@ -18,12 +20,44 @@ fieldset {
 }
 
 
-.searchSpace {
-    padding-right: 30px;
-}
-
 
 ul {
     list-style: none;
-    display: inline-block;
 }
+
+input {
+    color: white;
+    height: 35px;
+    border-radius: 5%;
+}
+
+form {
+    background: none;
+}
+
+
+
+fieldset {
+    background: none;
+}
+
+
+
+.navBar {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navText {
+    font-weight: bolder;
+}
+
+
+
+.hidden {
+    display: none;
+}
+

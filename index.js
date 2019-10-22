@@ -19,7 +19,7 @@ function searchSubmit() {
  
     })
 }
-
+ 
 
 function formatSearchQueryParams(params) {
     const queryItems = Object.keys(params)
@@ -73,6 +73,7 @@ function getSpaceSearchYoutubeApi(search) {
 
 
 function displaySpaceSearchResult(responseSpaceSearchJson) {
+    $('.searchResults').removeClass('hidden');
     for (i=0; i < 10; i++) {
         let picture = responseSpaceSearchJson.collection.items[i].links[0].href
          $('#NASAResults').append(`
@@ -170,16 +171,16 @@ function getYoutubeDateResults(responseNASADateJson) {
 
 function displayDateResults(responseNASADateJson) {
     let pictureDate = responseNASADateJson.url
-    $('#dateNASA').append(`<img src='${pictureDate}'>`)
+    $('.dateResults').removeClass('hidden');
+    $('#dateNASA').append(`<img src='${pictureDate}' alt="Image from date entered" class="dateImage">`)
 }
 
 
 function displayYoutubeDateResults(responseYoutubeDateResults) {
     for (let i=0; i < responseYoutubeDateResults.items.length; i++) {
         let youtubeDate = responseYoutubeDateResults.items[i].id.videoId
-        console.log(responseYoutubeDateResults.items[i].snippet.thumbnails.default.url)
         $('#dateYoutube').html( 
-            `<iframe src="https://www.youtube.com/embed/${youtubeDate}"/>`
+            `<li><iframe src="https://www.youtube.com/embed/${youtubeDate}"/></li>`
         )
     }
 }
