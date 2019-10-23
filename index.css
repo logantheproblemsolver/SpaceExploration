@@ -178,6 +178,20 @@ button {
     .landingPage {
         background-size: fill;
     }
+
+
+    .crawl {
+        animation: crawl 60s linear;
+        animation-fill-mode: forwards;
+    }
+    .starWarsText {
+        height: 650px;
+        perspective: 400px;
+        font-size: 350%;
+        font-weight: 600;
+        letter-spacing: 2px;
+        line-height: 150%;
+    }
 }
 
 @keyframes crawl {
@@ -188,16 +202,5 @@ button {
     100% {
         top: -6000px;
         transform: rotateX(25deg) translateZ(-2500px);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-    100% {
-        opactiy: 1;
-        transform: none;
     }
 }
