@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Space Exploration</title>
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body class="indexPage">
+    <h1> Look, space at your fingertips. Isn't it cool? </h1>
+    <h2> You can pick to search a topic or you can pick a photo of the day! </h2>
+    <section class="navBar">
+        <form class="spaceSearch">
+            <fieldset>
+                <input type="text" class="input" id="searchInput" placeholder="Let's search space!">
+                <input type="submit" class="submitInput" id="searchSubmit">
+            </fieldset>
+        </form>
+        <p class="navText"> OR </p>
+        <form class="spaceDate">
+            <fieldset>
+                <input type="date" name="APOD" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
+                <input type="submit" class="submitInput" id="dateSubmit">
+            </fieldset>
+        </form>
+    </section>
+    <section class="searchSpace">
+        <div class="searchResults hidden" id="searchNASA">
+            <ul class="NASASearchResults" id="NASAResults"> 
+                
+            </ul>
+        </div>
+        <div class="searchResults hidden" id="searchYoutube">
+            <ul class="youtubeVideos" id="youtubeSearchVideos">
+
+            </ul>
+        </div>
+    </section>
+
+    <section class="dateSpace">
+        <div class="dateResults hidden" id="dateNASA">
+
+        </div>
+        <div class="dateResults hidden" id="dateYoutube">
+        </div>
+    </section>
+    <section class="badResult">
+
+    </section> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
