@@ -1,8 +1,7 @@
 * {
     box-sizing: border-box;
-    background-image: url("SpaceBackground-2.jpeg");
-    background-attachment: inherit;
 
+    font-family: 'Pathway Gothic One', sans-serif;
 
 }
 
@@ -11,9 +10,8 @@ body {
     text-align: center;
     align-content: center;
     color: white;
-    background: none;
-    animation: fadeInUp;
-    animation-delay: 38s;
+    background-image: url("SpaceBackground-2.jpeg");
+    background-attachment: inherit;
 }
 
 section {
@@ -40,9 +38,11 @@ ul li {
 }
 
 input {
-    color: white;
+    width: auto;
     height: 35px;
     border-radius: 5%;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 form {
@@ -58,6 +58,7 @@ fieldset {
 
 h1, h2 {
     background: none;
+    letter-spacing: 4px;
 }
 
 .navBar {
@@ -71,6 +72,8 @@ h1, h2 {
 
 .navText {
     font-weight: bolder;
+    font-family: sans-serif;
+    background: none;
 }
 
 
@@ -90,6 +93,7 @@ h1, h2 {
     width: 400px;
     height: 400px;
 }
+
 
 
 .submitInput:hover {
@@ -125,9 +129,15 @@ h1, h2 {
 
 
 .nextPage {
-    justify-content: right;
     width: 500px;
-    height:50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+button {
+    background-color: black;
+    color: white;
 }
 
 .nextPage a {
@@ -139,16 +149,26 @@ h1, h2 {
 }
 
 .crawl {
-    position: relative;
+    position: relative !important;
     top: -100px;
     transform-origin: 50% 100%;
     animation: crawl 60s linear;
     animation-fill-mode: forwards;
 
+
 }
 
 
 
+@media only screen and (max-width: 550px) {
+    .nextPage {
+        height: 100px;
+    }
+
+    .landingPage {
+        background-size: fill;
+    }
+}
 
 @keyframes crawl {
     0% {
