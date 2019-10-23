@@ -170,13 +170,20 @@ function getYoutubeDateResults(responseNASADateJson) {
 }
 
 function displayDateResults(responseNASADateJson) {
-    console.log(responseNASADateJson.explanation)
+    console.log(responseNASADateJson)
     let pictureDate = responseNASADateJson.url
     $('.dateResults').removeClass('hidden');
+    if (pictureDate.includes('youtube')) {
+        $('#dateNASA').append(`
+        <iframe src='${pictureDate}' alt="Video from date entered" class="dateImage"/>
+        <p class="dateDescription">${responseNASADateJson.explanation}</p>`)
+    } else {
     $('#dateNASA').append(`
     <img src='${pictureDate}' alt="Image from date entered" class="dateImage">
     <p class="dateDescription">${responseNASADateJson.explanation}</p>
     `)
+    }
+
 }
 
 
@@ -200,10 +207,3 @@ $(function() {
     dateSubmit();
 })
 
-
-$(function() {
-    $('.crawl').on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function() {
-        alert('transition finished');
-        $('.starWarsText').addCSS('display', 'none');
-    })
-})
