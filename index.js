@@ -16,7 +16,8 @@ function searchSubmit() {
         getSpaceSearchYoutubeApi(search);
         $('#NASAResults').empty();
         $('#youtubeSearchVideos').empty();
- 
+        $('#dateNASA').empty();
+        $('#dateYoutube').empty();
     })
 }
  
@@ -86,7 +87,6 @@ function displaySpaceSearchResult(responseSpaceSearchJson) {
 function displayYoutubeSearchResults(responseYoutubeJson) {
     for (let i=0; i < responseYoutubeJson.items.length; i++) {
         let youtubeSearch = responseYoutubeJson.items[i].id.videoId;
-        console.log(youtubeSearch)
         $('#youtubeSearchVideos').append( 
             `<li>
                 <p class="title">${responseYoutubeJson.items[i].snippet.title}</p>
@@ -103,10 +103,11 @@ function dateSubmit() {
         console.log('dateSubmit ran!')
         d.preventDefault();
         let date = $('#dateInput').val();
-        console.log(date)
         getSpaceDate(date);
-        $('.dateResults').empty();
-        $('.searchResults').empty();
+        $('#NASAResults').empty();
+        $('#youtubeSearchVideos').empty();
+        $('#dateNASA').empty();
+        $('#dateYoutube').empty();
     })
 }
 
@@ -188,10 +189,12 @@ function displayDateResults(responseNASADateJson) {
 
 
 function displayYoutubeDateResults(responseYoutubeDateResults) {
+    $('#dateYoutube').html(`<ul class="youtubeVideos" id="youtubeDateVideos"></ul>`)
     for (let i=0; i < responseYoutubeDateResults.items.length; i++) {
         let youtubeDate = responseYoutubeDateResults.items[i].id.videoId
         $('#dateYoutube').append( 
             `<li>
+            <p class="title">${responseYoutubeDateResults.items[i].snippet.title}</p>
             <iframe src="https://www.youtube.com/embed/${youtubeDate}"/>
             </li>`
         )
