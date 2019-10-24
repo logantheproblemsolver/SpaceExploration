@@ -128,7 +128,7 @@ h1, h2 {
     justify-content: center;
     height: 800px;
     perspective: 400px;
-    color: #feda4a;
+    color: #e9c123;
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 500%;
     font-weight: 600;
@@ -155,7 +155,7 @@ button {
 }
 
 .starWarsText div, p {
-    background: black;
+    background: none;
 }
 
 .crawl {
