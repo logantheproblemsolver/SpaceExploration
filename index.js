@@ -210,3 +210,9 @@ $(function() {
     dateSubmit();
 })
 
+
+
+$(function() {
+    $('.nextPage').fadeIn(70500);
+})
+

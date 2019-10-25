@@ -119,7 +119,7 @@ h1, h2 {
     height: 100%;
     overflow: hidden;
     background-image: url(SpaceBackground-3.jpeg);
-    background-size: 100%;
+    background-size: cover;
 
 }
 
@@ -140,7 +140,8 @@ h1, h2 {
 
 .nextPage {
     width: 500px;
-    height: 50px;
+    height: 50px;   
+    font-size:36px;
     cursor: pointer;
 }
 
@@ -169,10 +170,19 @@ button {
 }
 
 
+.button {
+    margin: auto auto;
+    position: fixed;
+    bottom: 50%;
+}
+
+
 
 @media only screen and (max-width: 550px) {
     .nextPage {
         height: 100px;
+        width: 200px;
+        font-size: 18px;
     }
 
     .landingPage {
@@ -192,6 +202,8 @@ button {
         letter-spacing: 2px;
         line-height: 150%;
     }
+
+
 }
 
 @keyframes crawl {
@@ -202,5 +214,15 @@ button {
     100% {
         top: -6000px;
         transform: rotateX(25deg) translateZ(-2500px);
+    }
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
