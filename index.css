@@ -11,12 +11,15 @@
 
 body {
     text-align: center;
-    align-content: center;
     color: white;
+    align-content: center;
     background-image: url("SpaceBackground-2.jpeg");
     background-attachment: inherit;
+    background-size: cover;
     font-family: 'Pathway Gothic One', sans-serif;
 }
+
+
 
 section {
     display: inline-block;
@@ -25,8 +28,10 @@ section {
 }
 
 
+
 fieldset {
     border: none;
+    color: white;
 }
 
 
