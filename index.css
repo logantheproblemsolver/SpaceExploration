@@ -1,8 +1,11 @@
+@font-face {
+    font-family: 'Pathway Gothic One', sans-serif;
+    src: url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap)
+}
+
+
 * {
     box-sizing: border-box;
-
-    font-family: 'Pathway Gothic One', sans-serif;
-
 }
 
 
@@ -12,6 +15,7 @@ body {
     color: white;
     background-image: url("SpaceBackground-2.jpeg");
     background-attachment: inherit;
+    font-family: 'Pathway Gothic One', sans-serif;
 }
 
 section {
@@ -110,119 +114,3 @@ h1, h2 {
     cursor: pointer;
 }
 
-/* This is for the landing page styling */
-
-
-
-.landingPage {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-image: url(SpaceBackground-3.jpeg);
-    background-size: cover;
-
-}
-
-.starWarsText {
-    display: flex;
-    justify-content: center;
-    height: 800px;
-    perspective: 400px;
-    color: #e9c123;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 500%;
-    font-weight: 600;
-    letter-spacing: 6px;
-    line-height: 150%;
-    text-align: center;
-}
-
-
-.nextPage {
-    width: 500px;
-    height: 50px;   
-    font-size:36px;
-    cursor: pointer;
-}
-
-
-button {
-    background-color: black;
-    color: white;
-}
-
-.nextPage a {
-    color: white;
-}
-
-.starWarsText div, p {
-    background: none;
-}
-
-.crawl {
-    position: relative !important;
-    top: -100px;
-    transform-origin: 50% 100%;
-    animation: crawl 60s linear;
-    animation-fill-mode: forwards;
-
-
-}
-
-
-.button {
-    margin: auto auto;
-    position: fixed;
-    bottom: 50%;
-}
-
-
-
-@media only screen and (max-width: 550px) {
-    .nextPage {
-        height: 100px;
-        width: 200px;
-        font-size: 24px;
-    }
-
-    .landingPage {
-        background-size: fill;
-    }
-
-
-    .crawl {
-        animation: crawl 60s linear;
-        animation-fill-mode: forwards;
-    }
-    .starWarsText {
-        height: 650px;
-        perspective: 400px;
-        font-size: 350%;
-        font-weight: 600;
-        letter-spacing: 2px;
-        line-height: 150%;
-    }
-
-
-}
-
-@keyframes crawl {
-    0% {
-        top: 0;
-        transform: rotateX(20deg) translateZ(0);
-    }
-    100% {
-        top: -6000px;
-        transform: rotateX(25deg) translateZ(-2500px);
-    }
-}
-
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}

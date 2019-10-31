@@ -4,28 +4,52 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>The Beginning of Space Exploration</title>
-    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <title>Space Exploration</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="landingPage">
-    <section class="starWarsText">
-        <div class="crawl">
-            <div class="titles">
-                <p>Space Exploration</p>
-                <p>The new way of looking at it</p>
-            </div>
 
-            <p>Long ago we were people that stared at space and could only imagine what it is filled with. From that curiosity multiple stories were told to fill the void where science was unable to take us.</p>
-            <p>Then. in 1957 is when Sputnik 1 was launched. That was the beginning to a new space era. New discoveries made each year about space. To this day we are still trying to figure it out.</p>
-            <p>The difference from back then to now is that we have computers that can show us space at our fingertips. We don't have to be rocket scientist to explore space anymore. </p>
-            <p>With this website we can learn about all kinds of space topics</p>
-            <p>Would you like to take a trip to space and learn all about it's wonders?</p>
+
+<body class="indexPage">
+    <h1> Look, space at your fingertips. Isn't it cool? </h1>
+    <h2> You can pick to search a topic or you can pick a photo of the day! </h2>
+    <section class="navBar">git
+        <form class="spaceSearch">
+            <fieldset>
+                <input type="text" class="input" id="searchInput" placeholder="Let's search space!">
+                <input type="submit" class="submitInput" id="searchSubmit">
+            </fieldset>
+        </form>
+        <p class="navText"> OR </p>
+        <form class="spaceDate">
+            <fieldset>
+                <input type="date" name="APOD" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
+                <input type="submit" class="submitInput" id="dateSubmit">
+            </fieldset>
+        </form>
+    </section>
+    <section class="searchSpace">
+        <div class="searchResults hidden" id="searchNASA">
+            <ul class="NASASearchResults" id="NASAResults"> 
+                
+            </ul>
         </div>
-        <div class="button">
-            <button type="button" class="nextPage hidden" value="Let's take a trip to space" onclick="window.location.href='searchPage.html'">Let's take a trip to space</button>
+        <div class="searchResults hidden" id="searchYoutube">
+            <ul class="youtubeVideos" id="youtubeSearchVideos">
+
+            </ul>
         </div>
     </section>
+
+    <section class="dateSpace">
+        <div class="dateResults hidden" id="dateNASA">
+
+        </div>
+        <div class="dateResults hidden" id="dateYoutube">
+        </div>
+    </section>
+    <section class="badResult">
+
+    </section> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </body>
