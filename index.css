@@ -9,6 +9,8 @@
 }
 
 
+@media screen and (min-width: 150px) {
+
 body {
     text-align: center;
     color: white;
@@ -18,7 +20,6 @@ body {
     background-size: cover;
     font-family: 'Pathway Gothic One', sans-serif;
 }
-
 
 
 section {
@@ -56,6 +57,7 @@ input {
 
 form {
     background: none;
+    display: block;
 }
 
 
@@ -117,5 +119,7 @@ h1, h2 {
 
 .submitInput:hover {
     cursor: pointer;
+}
+
 }
 
