@@ -9,7 +9,7 @@
 }
 
 
-@media screen and (min-width: 315px) {
+@media screen and (min-width: 315px ){
 
 body {
     text-align: center;
@@ -119,8 +119,14 @@ h1, h2 {
 }
 
 @media screen and (min-width: 768px) {
+    
     .navBar {
-        display: inline;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
     }
 
-}
+    
+    }
