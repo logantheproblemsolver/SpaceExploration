@@ -8,10 +8,8 @@ NASADateURL = 'https://api.nasa.gov/planetary/apod'
 // here is the 1st set
 function searchSubmit() {
     $('#searchSubmit').on('click', function(s) {
-        console.log('searchSubmit ran!')
         s.preventDefault();
         let search = $('#searchInput').val();
-        console.log(search)
         getSpaceSearchNASAApi(search);
         getSpaceSearchYoutubeApi(search);
         $('#NASAResults').empty();
@@ -53,7 +51,7 @@ function getSpaceSearchNASAApi(search) {
 function getSpaceSearchYoutubeApi(search) {
     const params = {
         key: Youtube_apiKey,
-        q: search,
+        q: search + ' space',
         part: 'snippet',
         };
       const queryString = formatSearchQueryParams(params)
@@ -100,7 +98,6 @@ function displayYoutubeSearchResults(responseYoutubeJson) {
 // here is the 2nd set
 function dateSubmit() {
     $('#dateSubmit').on('click', function(d) {
-        console.log('dateSubmit ran!')
         d.preventDefault();
         let date = $('#dateInput').val();
         getSpaceDate(date);
@@ -119,6 +116,8 @@ function formatDateQueryParams(parameters) {
 }
 
 
+
+
 function getSpaceDate(date) {
     const parameters = {
         api_key: NASA_apiKey,
@@ -127,6 +126,15 @@ function getSpaceDate(date) {
 
     const queryString = formatDateQueryParams(parameters)
     const url = NASADateURL + '?' + queryString;
+
+    function badResults(date) {
+        if (date < 1995-06-20) {
+            $('.badResult').append('Date must be a minimum of "06-20-1995", please try again!')
+        } else {
+            $('.badResult').append(`Something went wrong: ${err.message}`)
+        }
+    }
+
 
 
     fetch(url)
@@ -141,7 +149,12 @@ function getSpaceDate(date) {
         getYoutubeDateResults(responseNASADateJson)
     }
         )
-    .catch(err => $('.badResult').append(`Something went wrong: ${err.message}`));
+    .catch(err => {
+        if (date < "1995-06-20") {
+            $('.badResult').append('Date must be a minimum of "06-20-1995", please try again!')
+        } else {
+            $('.badResult').append(`Something went wrong: ${err.message}`)
+        }});
 
     
 }
@@ -171,7 +184,6 @@ function getYoutubeDateResults(responseNASADateJson) {
 }
 
 function displayDateResults(responseNASADateJson) {
-    console.log(responseNASADateJson)
     let pictureDate = responseNASADateJson.url
     $('.dateResults').removeClass('hidden');
     if (pictureDate.includes('youtube')) {

@@ -9,7 +9,7 @@
 }
 
 
-@media screen and (min-width: 150px) {
+@media screen and (min-width: 315px) {
 
 body {
     text-align: center;
@@ -33,6 +33,7 @@ section {
 fieldset {
     border: none;
     color: white;
+    background: none;
 }
 
 
@@ -57,13 +58,6 @@ input {
 
 form {
     background: none;
-    display: block;
-}
-
-
-
-fieldset {
-    background: none;
 }
 
 
@@ -78,6 +72,7 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     background: none;
+    display: block;
 }
 
 
@@ -123,3 +118,9 @@ h1, h2 {
 
 }
 
+@media screen and (min-width: 768px) {
+    .navBar {
+        display: inline;
+    }
+
+}
