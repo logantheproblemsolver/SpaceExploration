@@ -8,22 +8,24 @@
     <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 
-
+<main>
 <body class="indexPage">
     <h1> Look, space at your fingertips. Isn't it cool? </h1>
     <h2> Pick a subject about space to search or you can pick a date and see NASA's photo of the day! </h2>
     <section class="navBar">
         <form class="space">
             <fieldset id="fieldset1">
-                <input type="text" class="input" id="searchInput" placeholder="Let's search space!">
-                <input type="submit" class="submitInput" id="searchSubmit">
+                <legend>Use this to search for cool space images</legend>
+                <label class="label">Use this box to search for cool space images! <input type="text" class="input" id="searchInput" value="space"></label>
+                <input type="submit" class="submitInput" id="searchSubmit" value="submit">
             </fieldset>
         </form>
        <p class="navText"> OR </p>
         <form>
             <fieldset id="fieldset2">
-                <input type="date" name="APOD" class="input" id="dateInput" value="yyyy-MM-dd" min="1995-06-20">
-                <input type="submit" class="submitInput" id="dateSubmit">
+                <legend>Pick a date to search for a picture of the day</legend>
+                <label class="label">Use this box to pick a date to search for the picture of the day! <input type="date" name="APOD" class="input" id="dateInput" min="1995-06-20" value="date"></label>
+                <input type="submit" class="submitInput" id="dateSubmit" value="submit">
             </fieldset>
         </form>
     </section>
@@ -53,5 +55,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </body>
-
+</main>
 </html>

@@ -10,6 +10,7 @@ function searchSubmit() {
     $('#searchSubmit').on('click', function(s) {
         s.preventDefault();
         let search = $('#searchInput').val();
+        console.log(search);
         getSpaceSearchNASAApi(search);
         getSpaceSearchYoutubeApi(search);
         $('#NASAResults').empty();

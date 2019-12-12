@@ -13,7 +13,7 @@
 
 body {
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.911);
     align-content: center;
     background-image: url("SpaceBackground-2.jpeg");
     background-attachment: inherit;
@@ -32,11 +32,13 @@ section {
 
 fieldset {
     border: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.911);
     background: none;
 }
 
-
+legend {
+    display: none;
+}
 
 ul {
     list-style: none;
@@ -78,11 +80,15 @@ h1, h2 {
 
 .navText {
     font-weight: bolder;
+    font-size: 1em;
     font-family: sans-serif;
     background: none;
 }
 
 
+.label {
+    font-size: 1.7em;
+}
 
 .hidden {
     display: none;
@@ -91,9 +97,11 @@ h1, h2 {
 
 
 .spaceImages {
-    width: 200px;
-    height: 200px;
+    width: 30%;
+    height: auto;
 }
+
+
 
 .dateImage {
     width: 400px;
