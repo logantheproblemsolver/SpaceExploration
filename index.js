@@ -1,8 +1,8 @@
-NASA_apiKey = 'fVdyFifJQ5EW8GNgZfe6wZRIrGxIF23gePQIsltC'
-Youtube_apiKey = 'AIzaSyAvVMyc7xMckEifggvX6O3GXzr7DLxTe-w'
-youtubeSearchURL = 'https://www.googleapis.com/youtube/v3/search'
-NASASearchURL = 'https://images-api.nasa.gov/search'
-NASADateURL = 'https://api.nasa.gov/planetary/apod'
+const NASA_apiKey = 'fVdyFifJQ5EW8GNgZfe6wZRIrGxIF23gePQIsltC'
+const Youtube_apiKey = 'AIzaSyAvVMyc7xMckEifggvX6O3GXzr7DLxTe-w'
+const youtubeSearchURL = 'https://www.googleapis.com/youtube/v3/search'
+const NASASearchURL = 'https://images-api.nasa.gov/search'
+const NASADateURL = 'https://api.nasa.gov/planetary/apod'
 
 // first set of JS will be for the search bar 
 // here is the 1st set
@@ -10,7 +10,6 @@ function searchSubmit() {
     $('#searchSubmit').on('click', function(s) {
         s.preventDefault();
         let search = $('#searchInput').val();
-        console.log(search);
         getSpaceSearchNASAApi(search);
         getSpaceSearchYoutubeApi(search);
         $('#NASAResults').empty();
@@ -125,17 +124,9 @@ function getSpaceDate(date) {
         date: date     
     }
 
+
     const queryString = formatDateQueryParams(parameters)
     const url = NASADateURL + '?' + queryString;
-
-    function badResults(date) {
-        if (date < 1995-06-20) {
-            $('.badResult').append('Date must be a minimum of "06-20-1995", please try again!')
-        } else {
-            $('.badResult').append(`Something went wrong: ${err.message}`)
-        }
-    }
-
 
 
     fetch(url)
@@ -151,6 +142,7 @@ function getSpaceDate(date) {
     }
         )
     .catch(err => {
+        $('.badResult').empty();
         if (date < "1995-06-20") {
             $('.badResult').append('Date must be a minimum of "06-20-1995", please try again!')
         } else {
@@ -183,6 +175,7 @@ function getYoutubeDateResults(responseNASADateJson) {
         .then(responseYoutubeDateResults => displayYoutubeDateResults(responseYoutubeDateResults))
         .catch(err => $('.badResult').append(`Something went wrong: ${err.message}`))
 }
+
 
 function displayDateResults(responseNASADateJson) {
     let pictureDate = responseNASADateJson.url
@@ -218,7 +211,6 @@ function displayYoutubeDateResults(responseYoutubeDateResults) {
 
 
 $(function() {
-    console.log('Looks like you are ready to explore space!')
     searchSubmit();
     dateSubmit();
 })
